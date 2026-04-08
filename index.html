@@ -1,102 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Do you love me?</title>
+<title>Love</title>
 
 <style>
 body {
   text-align: center;
-  font-family: Arial;
-  background: linear-gradient(#ffe6f0, #ffcce0);
-  overflow: hidden;
+  background: pink;
   margin-top: 120px;
+  font-family: Arial;
 }
 
 h1 {
-  color: #ff4d88;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 button {
-  padding: 20px 35px;
-  font-size: 22px;
+  padding: 15px 25px;
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 10px;
   border: none;
-  border-radius: 15px;
-  margin: 15px;
-  cursor: pointer;
-}
-
-#yes {
-  background-color: #ff4d88;
-  color: white;
 }
 
 #no {
-  background-color: #ddd;
-  font-size: 14px;
   position: absolute;
-}
-
-.heart {
-  position: absolute;
-  color: #ff4d88;
-  animation: float 5s linear infinite;
-}
-
-@keyframes float {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Do you love me?? 🥺💖</h1>
+<h1>Do you love me? 🥺</h1>
 
-<button id="yes" onclick="goLove()">Yesss 🩷</button>
-<button id="no" onmouseover="moveNo()">No :(</button>
+<button onclick="playAndGo()">Yes 🩷</button>
+<button id="no" onmouseover="move()">No</button>
 
-<!-- 🎵 ميوزك -->
-<audio id="music" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+<audio id="music">
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
 </audio>
 
 <script>
-function goLove() {
-  let music = document.getElementById("music");
-  music.play();
-
+function playAndGo() {
+  let m = document.getElementById("music");
+  m.play().catch(()=>{});
   setTimeout(() => {
     window.location.href = "love.html";
-  }, 800);
+  }, 1000);
 }
 
-function moveNo() {
-  let btn = document.getElementById("no");
-  let x = Math.random() * (window.innerWidth - 100);
-  let y = Math.random() * (window.innerHeight - 50);
-
-  btn.style.left = x + "px";
-  btn.style.top = y + "px";
+function move() {
+  let b = document.getElementById("no");
+  b.style.left = Math.random()*300 + "px";
+  b.style.top = Math.random()*300 + "px";
 }
-
-setInterval(() => {
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}, 300);
 </script>
 
 </body>
