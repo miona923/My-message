@@ -1,62 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I love you</title>
+<title>Love</title>
 
 <style>
 body {
   text-align: center;
-  font-family: Arial;
-  background: linear-gradient(#ff99bb, #ff4d88);
+  background: hotpink;
+  color: white;
   margin-top: 150px;
-  overflow: hidden;
+  font-family: Arial;
 }
 
 h1 {
-  font-size: 45px;
-  color: white;
-}
-
-.heart {
-  position: absolute;
-  color: white;
-  animation: float 5s linear infinite;
-}
-
-@keyframes float {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
+  font-size: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>I love you too 💖<br>and I miss you so much 🥺💗</h1>
+<h1>I love you too 💖<br>I miss you 😭</h1>
 
-<!-- 🎵 ميوزك -->
 <audio autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
 </audio>
-
-<script>
-setInterval(() => {
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💗";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}, 300);
-</script>
 
 </body>
 </html>
